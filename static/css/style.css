@@ -1,0 +1,107 @@
+/* body{
+    background-color: lightblue;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+padding: 10px;
+}
+.delete{
+   
+    margin-right: 10px;
+
+}
+.update{
+    margin-left: 30px;
+
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.action{
+    
+    margin-left: 300px;
+}
+
+
+ */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  background-color: #9FBB73;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+.container1 {
+  background-color: #F1EB90;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete,
+.update {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.delete {
+  background-color: #dc3545;
+}
+
+.update {
+  background-color: #17a2b8;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 70%;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#toggleButton {
+  background-color: #4CAF50;
+  
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 10px;
+}

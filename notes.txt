@@ -1,0 +1,7 @@
+
+ Template inheritance allows you to reuse an HTML file for other pages.
+You can create one master HTML file that has the skeleton of what each page is going to look like,
+and you can inherit that to other pages. 
+So, it reduces the line of codes that we need to write.  
+
+  database on our Flask application. We will use SQLAlchemy ORM and SQLite database for this app.

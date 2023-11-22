@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+
+<p><b>TASKIT.IO</b></p>
+
+<button id="toggleButton" onclick="toggleForm()">New Task</button>
+
+<form id="taskForm" action="/" method="POST" style="display: none">
+  <input type="text" name="content" id="content" />
+  <input type="submit" value="Add Task" />
+</form>
+
+<table>
+  <tr class="container1">
+    <th class="completed">Completed</th>
+    <th class="task">Task</th>
+    <th class="action">Actions</th>
+  </tr>
+
+  {% for task in tasks %}
+  <tr>
+    <td>
+      <input
+        type="checkbox"
+        name="completed"
+        data-task-id="{{ task.id }}"
+        {%
+        if
+        task.completed
+        %}checked{%
+        endif
+        %}
+        onchange="updateTaskStatus({{ task.id }})"
+      />
+    </td>
+
+    <td>{{ task.content }}</td>
+
+    <td class="container">
+      <a href="delete/{{task.id}}" class="delete">Delete</a> <br />
+      <a href="update/{{task.id}}" class="update">Update</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<script>
+  function toggleForm() {
+    var form = document.getElementById("taskForm");
+    form.style.display =
+      form.style.display === "none" || form.style.display === ""
+        ? "block"
+        : "none";
+  }
+
+  function updateTaskStatus(taskId) {
+    // Retrieve the value of the checkbox
+    var checkbox = document.querySelector(
+      `input[name="completed"][data-task-id="${taskId}"]`
+    );
+    var completedValue = checkbox.checked;
+
+    // Send an AJAX request to update the task status
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/update/" + taskId, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("completed=" + completedValue);
+  }
+</script>
+
+{% endblock %}
