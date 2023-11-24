@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+{% block body %}
+
+<div class="header">
+  <div class="header-left active">
+    <a href="{{ url_for('') }}" class="logo">
+      <img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="" />
+    </a>
+    <a href="{{ url_for('') }}" class="logo-small">
+      <img src="{{ url_for('static', filename='assets/img/logo-small.png') }}" alt="" />
+    </a>
+    <a id="toggle_btn" href="javascript:void(0);"> </a>
+  </div>
+
+  <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+    <span class="bar-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </a>
+
+  <ul class="nav user-menu">
+    <!-- Add your existing list items with modifications below -->
+
+    <li class="nav-item">
+      <div class="top-nav-search">
+        <a href="javascript:void(0);" class="responsive-search">
+          <i class="fa fa-search"></i>
+        </a>
+        <form action="#">
+          <div class="searchinputs">
+            <input type="text" placeholder="Search Here ..." />
+            <div class="search-addon">
+              <span><img src="{{ url_for('static', filename='assets/img/icons/closes.svg') }}" alt="img" /></span>
+            </div>
+          </div>
+          <a class="btn" id="searchdiv"><img src="{{ url_for('static', filename='assets/img/icons/search.svg') }}" alt="img"></a>
+        </form>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown has-arrow flag-nav">
+      <!-- Adjust URLs for flag images -->
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
+        <img src="{{ url_for('static', filename='assets/img/flags/us1.png') }}" alt="" height="20">
+      </a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <!-- Adjust URLs for flag images -->
+        <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url_for('static', filename='assets/img/flags/us.png') }}" alt="" height="16"> English</a>
+        <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url_for('static', filename='assets/img/flags/fr.png') }}" alt="" height="16"> French</a>
+        <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url_for('static', filename='assets/img/flags/es.png') }}" alt="" height="16"> Spanish</a>
+        <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url_for('static', filename='assets/img/flags/de.png') }}" alt="" height="16"> German</a>
+      </div>
+    </li>
+
+    <!-- Add your existing list items with modifications above -->
+
+  </ul>
+
+  <div class="dropdown mobile-user-menu">
+    <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item" href="{{ url_for('profile') }}">My Profile</a>
+      <a class="dropdown-item" href="{{ url_for('general_settings') }}">Settings</a>
+      <a class="dropdown-item" href="{{ url_for('sign_in') }}">Logout</a>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
+
